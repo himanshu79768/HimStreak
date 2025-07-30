@@ -70,28 +70,36 @@
             <i class="fas fa-bars"></i>
         </button>
 
-        <!-- Header with Theme Toggle -->
-        <header class="app-header">
-            <div class="header-content">
-                <h1 class="header-title">HimStreak</h1>
-                <div class="header-actions">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <div class="profile-menu">
-                        <div class="profile-avatar-header" id="profileMenu">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="profile-dropdown hidden" id="profileDropdown">
-                            <button class="dropdown-item" id="logoutBtn">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Logout
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+       <header class="app-header">
+  <div class="header-content">
+    <!-- Left dummy space (optional if needed for symmetry) -->
+    <div class="header-actions left-actions"></div>
+
+    <!-- Centered Title -->
+    <div class="header-title-wrapper">
+      <h1 class="header-title">HimStreak</h1>
+    </div>
+
+    <!-- Right-side buttons -->
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="profile-menu">
+        <div class="profile-avatar-header" id="profileMenu">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="profile-dropdown hidden" id="profileDropdown">
+          <button class="dropdown-item" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
 
         <!-- Sidebar -->
         <nav class="sidebar" id="sidebar">
