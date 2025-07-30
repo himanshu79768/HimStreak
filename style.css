@@ -1024,8 +1024,8 @@ input[type="password"] {
   color: white;
   border: none;
   border-radius: var(--radius-md);
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1162,7 +1162,7 @@ input[type="password"] {
   top: 0;
   left: 0;
   width: 280px;
-  height: 100vh;
+  height: 100%;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   padding: var(--space-24);
@@ -2201,15 +2201,16 @@ input[type="password"] {
   
   .sidebar {
     width: 100vw;
-    max-width: 320px;
+    max-width: 300px;
     transform: translateX(-100%); /* Hide it completely */
+    height: 100%;
   }
   
   .sidebar-toggle-fixed {
     top: var(--space-16);
     left: var(--space-16);
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
   }
 }
 
