@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>HimStreak - CA Foundation Study Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Authentication Screen -->
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="logo-text">HimStreak</span>
+                </div>
+                <p class="auth-subtitle">CA Foundation Study Tracker</p>
+            </div>
+            
+            <div class="auth-forms">
+                <div id="loginForm" class="auth-form active">
+                    <h2>Welcome Back</h2>
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="loginEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="loginPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" id="loginBtn" class="btn btn-primary btn-full-width">Sign In</button>
+                    </form>
+                    <p class="auth-switch">Don't have an account? <a href="#" id="showRegister">Sign up</a></p>
+                </div>
+                
+                <div id="registerForm" class="auth-form">
+                    <h2>Create Account</h2>
+                    <form>
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="registerName" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="registerEmail" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="registerPassword" class="form-control" required>
+                        </div>
+                        <button type="submit" id="registerBtn" class="btn btn-primary btn-full-width">Create Account</button>
+                    </form>
+                    <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Sign in</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="mainApp" class="main-app hidden">
+        <!-- Fixed Toggle Button -->
+        <button class="sidebar-toggle-fixed" id="sidebarToggleFixed" aria-label="Toggle Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Header with Theme Toggle -->
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="header-title">HimStreak</h1>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="profile-menu">
+                        <div class="profile-avatar-header" id="profileMenu">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="profile-dropdown hidden" id="profileDropdown">
+                            <button class="dropdown-item" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="logo-text">HimStreak</span>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="menu-item active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="menu-item" data-section="timer">
+                    <i class="fas fa-clock"></i>
+                    <span>Timer</span>
+                </li>
+                <li class="menu-item" data-section="sessions">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Study Sessions</span>
+                </li>
+                <li class="menu-item" data-section="tasks">
+                    <i class="fas fa-tasks"></i>
+                    <span>Tasks</span>
+                </li>
+                <li class="menu-item" data-section="notes">
+                    <i class="fas fa-sticky-note"></i>
+                    <span>Notes</span>
+                </li>
+                <li class="menu-item" data-section="habits">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Habits</span>
+                </li>
+                <li class="menu-item" data-section="goals">
+                    <i class="fas fa-target"></i>
+                    <span>Goals</span>
+                </li>
+                <li class="menu-item" data-section="analytics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Analytics</span>
+                </li>
+                <li class="menu-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+            
+            <div class="sidebar-profile">
+                <div class="profile-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <span class="profile-name" id="sidebarProfileName">Loading...</span>
+                    <span class="profile-status">Foundation Level</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="quickTimerBtn">
+                            <i class="fas fa-play"></i>
+                            Quick Timer
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="stats-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="studyStreak">0</h3>
+                            <p>Day Streak</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="todayHours">0h 0m</h3>
+                            <p>Today's Study</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="weeklyHours">0h 0m</h3>
+                            <p>This Week</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="goalProgress">0%</h3>
+                            <p>Goal Progress</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subjects-grid">
+                    <h2>CA Foundation Subjects</h2>
+                    <div class="subjects-container" id="subjectsContainer">
+                        <!-- Subject cards will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h2>Recent Activity</h2>
+                    <div class="activity-list" id="recentActivity">
+                        <p class="text-secondary">Start studying to see your recent activity here!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timer Section -->
+            <section id="timer" class="content-section">
+                <div class="section-header">
+                    <h1>Study Timer</h1>
+                </div>
+                
+                <div class="timer-container">
+                    <div class="timer-circle">
+                        <svg class="timer-progress" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="var(--color-bg-2)" stroke-width="8"/>
+                            <circle id="progressCircle" cx="100" cy="100" r="90" fill="none" stroke="var(--color-primary)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <div class="timer-display">
+                            <span id="timerDisplay">25:00</span>
+                            <span id="timerMode">Focus Time</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timer-controls">
+                        <button id="timerStart" class="btn btn-primary timer-btn">
+                            <i class="fas fa-play"></i>
+                            Start
+                        </button>
+                        <button id="timerPause" class="btn btn-secondary timer-btn hidden">
+                            <i class="fas fa-pause"></i>
+                            Pause
+                        </button>
+                        <button id="timerReset" class="btn btn-outline timer-btn">
+                            <i class="fas fa-stop"></i>
+                            Reset
+                        </button>
+                    </div>
+                    
+                    <div class="timer-settings">
+                        <div class="form-group">
+                            <label class="form-label">Subject</label>
+                            <select id="timerSubject" class="form-control">
+                                <option value="">Select Subject</option>
+                                <option value="Accountancy">📊 Accountancy</option>
+                                <option value="Business Law">⚖️ Business Law</option>
+                                <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                                <option value="Business Economics">📈 Business Economics</option>
+                            </select>
+                        </div>
+                        
+                        <div class="timer-modes">
+                            <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
+                            <button class="mode-btn" data-mode="custom">Custom</button>
+                            <button class="mode-btn" data-mode="deep">Deep Focus</button>
+                        </div>
+                        
+                        <div class="custom-timer hidden">
+                            <div class="form-group">
+                                <label class="form-label">Duration (minutes)</label>
+                                <input type="number" id="customDuration" class="form-control" min="1" max="180" value="25">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sessions Section -->
+            <section id="sessions" class="content-section">
+                <div class="section-header">
+                    <h1>Study Sessions</h1>
+                </div>
+                
+                <div class="sessions-stats">
+                    <div class="stat-card">
+                        <h3>Total Sessions</h3>
+                        <span id="totalSessions">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Average Duration</h3>
+                        <span id="avgDuration">0 min</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>This Week</h3>
+                        <span id="weekSessions">0</span>
+                    </div>
+                </div>
+                
+                <div class="sessions-filters">
+                    <select id="sessionSubjectFilter" class="form-control">
+                        <option value="">All Subjects</option>
+                        <option value="Accountancy">📊 Accountancy</option>
+                        <option value="Business Law">⚖️ Business Law</option>
+                        <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                        <option value="Business Economics">📈 Business Economics</option>
+                    </select>
+                    <input type="date" id="sessionDateFilter" class="form-control">
+                </div>
+                
+                <div class="sessions-list" id="sessionsList">
+                    <p class="text-secondary">No study sessions yet. Start your timer to create your first session!</p>
+                </div>
+            </section>
+
+            <!-- Tasks Section -->
+            <section id="tasks" class="content-section">
+                <div class="section-header">
+                    <h1>Tasks</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="newTaskBtn">
+                            <i class="fas fa-plus"></i>
+                            New Task
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tasks-filters">
+                    <select id="taskPriorityFilter" class="form-control">
+                        <option value="">All Priorities</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <select id="taskSubjectFilter" class="form-control">
+                        <option value="">All Subjects</option>
+                        <option value="Accountancy">📊 Accountancy</option>
+                        <option value="Business Law">⚖️ Business Law</option>
+                        <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                        <option value="Business Economics">📈 Business Economics</option>
+                    </select>
+                    <select id="taskStatusFilter" class="form-control">
+                        <option value="">All Tasks</option>
+                        <option value="pending">Pending</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                
+                <div class="tasks-list" id="tasksList">
+                    <p class="text-secondary">No tasks yet. Create your first task to get organized!</p>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section id="notes" class="content-section">
+                <div class="section-header">
+                    <h1>Notes</h1>
+                    <div class="header-actions">
+                        <button class="btn btn-primary" id="newNoteBtn">
+                            <i class="fas fa-plus"></i>
+                            New Note
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="notes-filters">
+                    <input type="text" id="notesSearch" class="form-control" placeholder="Search notes...">
+                    <select id="notesSubjectFilter" class="form-control">
+                        <option value="">All Subjects</option>
+                        <option value="Accountancy">📊 Accountancy</option>
+                        <option value="Business Law">⚖️ Business Law</option>
+                        <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                        <option value="Business Economics">📈 Business Economics</option>
+                    </select>
+                </div>
+                
+                <div class="notes-grid" id="notesGrid">
+                    <p class="text-secondary">No notes yet. Create your first note to start organizing your study materials!</p>
+                </div>
+            </section>
+
+            <!-- Habits Section -->
+            <section id="habits" class="content-section">
+                <div class="section-header">
+                    <h1>Study Habits</h1>
+                    <button class="btn btn-primary" id="newHabitBtn">
+                        <i class="fas fa-plus"></i>
+                        New Habit
+                    </button>
+                </div>
+
+                <div class="habits-overview">
+                    <div class="habit-stats">
+                        <div class="habit-stat">
+                            <h3>Active Habits</h3>
+                            <span id="activeHabits">0</span>
+                        </div>
+                        <div class="habit-stat">
+                            <h3>Best Streak</h3>
+                            <span id="bestStreak">0 days</span>
+                        </div>
+                        <div class="habit-stat">
+                            <h3>Today's Progress</h3>
+                            <span id="todayProgress">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habits-grid" id="habitsGrid">
+                    <p class="text-secondary">No habits yet. Create your first habit to build consistency!</p>
+                </div>
+            </section>
+
+            <!-- Goals Section -->
+            <section id="goals" class="content-section">
+                <div class="section-header">
+                    <h1>Goals</h1>
+                    <button class="btn btn-primary" id="newGoalBtn">
+                        <i class="fas fa-plus"></i>
+                        New Goal
+                    </button>
+                </div>
+
+                <div class="goals-grid" id="goalsGrid">
+                    <p class="text-secondary">No goals yet. Set your first goal to track your progress!</p>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="content-section">
+                <div class="section-header">
+                    <h1>Analytics</h1>
+                </div>
+                
+                <div class="analytics-grid">
+                    <div class="chart-card">
+                        <h3>Subject-wise Study Time</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="subjectChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Daily Study Pattern</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="dailyChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Weekly Progress</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="weeklyChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3>Goal Progress</h3>
+                        <div class="chart-container" style="position: relative; height: 300px;">
+                            <canvas id="goalsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h1>Settings</h1>
+                </div>
+                
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>Profile Information</h3>
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <input type="text" id="profileName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" id="profileEmail" class="form-control" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Study Preferences</h3>
+                        <div class="form-group">
+                            <label class="form-label">Pomodoro Duration (minutes)</label>
+                            <input type="number" id="workDuration" class="form-control" min="15" max="60" value="25">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Short Break (minutes)</label>
+                            <input type="number" id="shortBreak" class="form-control" min="5" max="30" value="5">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Daily Study Goal (hours)</label>
+                            <input type="number" id="dailyGoal" class="form-control" min="1" max="12" step="0.5" value="4">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-actions">
+                    <button class="btn btn-primary" id="saveSettings">
+                        <i class="fas fa-save"></i>
+                        Save Settings
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Task Modal -->
+    <div id="taskModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="taskModalTitle">New Task</h3>
+                <button class="modal-close" id="taskModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="taskTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea id="taskDescription" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <select id="taskSubject" class="form-control" required>
+                            <option value="">Select Subject</option>
+                            <option value="Accountancy">📊 Accountancy</option>
+                            <option value="Business Law">⚖️ Business Law</option>
+                            <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                            <option value="Business Economics">📈 Business Economics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Priority</label>
+                        <select id="taskPriority" class="form-control" required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Due Date</label>
+                        <input type="date" id="taskDueDate" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="taskModalCancel">Cancel</button>
+                <button type="submit" form="taskForm" class="btn btn-primary" id="taskModalSave">Save Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note Modal -->
+    <div id="noteModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="noteModalTitle">New Note</h3>
+                <button class="modal-close" id="noteModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="noteForm">
+                    <div class="form-group">
+                        <label class="form-label">Title</label>
+                        <input type="text" id="noteTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subject</label>
+                        <select id="noteSubject" class="form-control" required>
+                            <option value="">Select Subject</option>
+                            <option value="Accountancy">📊 Accountancy</option>
+                            <option value="Business Law">⚖️ Business Law</option>
+                            <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+                            <option value="Business Economics">📈 Business Economics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Content</label>
+                        <textarea id="noteContent" class="form-control" rows="8" placeholder="Write your notes here..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tags (comma separated)</label>
+                        <input type="text" id="noteTags" class="form-control" placeholder="chapter1, important, exam">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="noteModalCancel">Cancel</button>
+                <button type="submit" form="noteForm" class="btn btn-primary" id="noteModalSave">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Habit Modal -->
+    <div id="habitModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="habitModalTitle">New Habit</h3>
+                <button class="modal-close" id="habitModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="habitForm">
+                    <div class="form-group">
+                        <label class="form-label">Habit Name</label>
+                        <input type="text" id="habitName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Icon</label>
+                        <select id="habitIcon" class="form-control">
+                            <option value="📚">📚 Reading</option>
+                            <option value="✍️">✍️ Writing</option>
+                            <option value="🎯">🎯 Practice</option>
+                            <option value="💪">💪 Exercise</option>
+                            <option value="🧘">🧘 Meditation</option>
+                            <option value="⏰">⏰ Early Rise</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Target</label>
+                        <input type="text" id="habitTarget" class="form-control" placeholder="e.g., 30 minutes, 5 problems" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="habitModalCancel">Cancel</button>
+                <button type="submit" form="habitForm" class="btn btn-primary" id="habitModalSave">Save Habit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Goal Modal -->
+    <div id="goalModal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="goalModalTitle">New Goal</h3>
+                <button class="modal-close" id="goalModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="goalForm">
+                    <div class="form-group">
+                        <label class="form-label">Goal Title</label>
+                        <input type="text" id="goalTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea id="goalDescription" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Target Value</label>
+                        <input type="number" id="goalTarget" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Unit</label>
+                        <select id="goalUnit" class="form-control">
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                            <option value="percentage">Percentage</option>
+                            <option value="chapters">Chapters</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Deadline</label>
+                        <input type="date" id="goalDeadline" class="form-control" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline" id="goalModalCancel">Cancel</button>
+                <button type="submit" form="goalForm" class="btn btn-primary" id="goalModalSave">Save Goal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+        import { getDatabase, ref, set, get, child, push, update, remove, onValue } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBYJz-7t0-fUD9iOtUJ_upN3iHspt_u1pQ",
+            authDomain: "himstreak.firebaseapp.com",
+            databaseURL: "https://himstreak-default-rtdb.firebaseio.com",
+            projectId: "himstreak",
+            storageBucket: "himstreak.firebasestorage.app",
+            messagingSenderId: "972123938286",
+            appId: "1:972123938286:web:6373b9cc6fb819ac72c2ff",
+            measurementId: "G-9FSPJKJFJF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+
+        window.firebase = {
+            auth,
+            database,
+            ref,
+            set,
+            get,
+            child,
+            push,
+            update,
+            remove,
+            onValue,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            onAuthStateChanged,
+            updateProfile
+        };
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
