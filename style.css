@@ -480,7 +480,7 @@ pre code {
   font-size: var(--font-size-md);
   line-height: 1.5;
   color: var(--color-text);
-  background-color: var(--color-surface);
+  background-color: #FFFFFF;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-base);
   transition: border-color var(--duration-fast) var(--ease-standard),
@@ -1062,7 +1062,7 @@ input[type="password"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  height: 90%;
   padding: 0 var(--space-80);
   padding-right: 50px;
 }
@@ -1075,7 +1075,7 @@ input[type="password"] {
 }
 
 .header-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   color: #000;
   text-align: center;
@@ -1377,7 +1377,7 @@ input[type="password"] {
 }
 
 .btn-outline {
-  background: transparent;
+  background: #FFFFFF;
   border: 1px solid var(--color-border);
   color: var(--color-text);
 }
@@ -1385,6 +1385,32 @@ input[type="password"] {
 .btn-outline:hover {
   background: var(--color-secondary);
 }
+
+.button.btn-outline i.fas.fa-trash {
+  color: #dc3545;
+}
+
+
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-wrapper i.fas.fa-search {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-wrapper input.form-control {
+  padding-left: 32px; /* leave space for the icon */
+}
+
 
 .btn-sm {
   padding: var(--space-8) var(--space-16);
@@ -1402,13 +1428,28 @@ input[type="password"] {
   width: 100%;
 }
 
+#timerReset {
+  color: var(--color-red-500);
+}
+
+#timerReset:active {
+  background-color: var(--color-red-500);
+  color: var(--color-white);
+  outline: none;
+}
+
+#timerReset:hover {
+  outline: none;
+  border: none;
+}
+
 /* Form Styles */
 .form-control {
   width: 100%;
   padding: var(--space-12) var(--space-16);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: #FFFFFF;
   color: var(--color-text);
   font-size: 14px;
   font-family: inherit;
@@ -1461,7 +1502,7 @@ input[type="password"] {
 .stat-icon {
   width: 48px;
   height: 48px;
-  background: var(--color-primary);
+  background: #FF9500;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1705,10 +1746,7 @@ input[type="password"] {
   border-color: var(--color-primary);
 }
 
-.mode-btn:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
+
 
 /* Sessions */
 .sessions-stats {
@@ -2055,8 +2093,8 @@ input[type="password"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
 }
 
 .modal-content {
@@ -2214,7 +2252,7 @@ input[type="password"] {
   }
   
   .sidebar-toggle-fixed {
-    top: var(--space-16);
+    top: 12px;
     left: var(--space-16);
     width: 40px;
     height: 40px;
@@ -2224,6 +2262,7 @@ input[type="password"] {
 @media (max-width: 480px) {
   .main-content {
     padding: var(--space-16);
+    padding-top: 0px;
   }
   
   .stats-card {
