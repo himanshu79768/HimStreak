@@ -809,7 +809,7 @@ select.form-control {
   --color-secondary-hover: rgba(142, 142, 147, 0.2);
   --color-secondary-active: rgba(142, 142, 147, 0.25);
   --color-border: rgba(142, 142, 147, 0.2);
-  --color-card-border: rgba(142, 142, 147, 0.12);
+  --color-card-border: none;
   --color-success: var(--ios-green);
   --color-warning: var(--ios-orange);
   --color-error: var(--ios-red);
