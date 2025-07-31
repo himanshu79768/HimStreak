@@ -104,10 +104,7 @@
         <!-- Sidebar -->
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <div class="logo">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="logo-text">HimStreak</span>
-                </div>
+                
             </div>
             
             <ul class="sidebar-menu">
@@ -136,7 +133,7 @@
                     <span>Habits</span>
                 </li>
                 <li class="menu-item" data-section="goals">
-                    <i class="fas fa-target"></i>
+                    <i class="fas fa-bullseye"></i>
                     <span>Goals</span>
                 </li>
                 <li class="menu-item" data-section="analytics">
@@ -207,7 +204,7 @@
                     
                     <div class="stats-card">
                         <div class="stat-icon">
-                            <i class="fas fa-target"></i>
+                            <i class="fas fa-bullseye"></i>
                         </div>
                         <div class="stat-content">
                             <h3 id="goalProgress">0%</h3>
@@ -379,17 +376,21 @@
                     </div>
                 </div>
                 
-                <div class="notes-filters">
-                    <input type="text" id="notesSearch" class="form-control" placeholder="Search notes...">
-                    <select id="notesSubjectFilter" class="form-control">
-                        <option value="">All Subjects</option>
-                        <option value="Accountancy">📊 Accountancy</option>
-                        <option value="Business Law">⚖️ Business Law</option>
-                        <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
-                        <option value="Business Economics">📈 Business Economics</option>
-                    </select>
-                </div>
-                
+               <div class="notes-filters">
+  <div class="search-wrapper">
+    <i class="fas fa-search"></i>
+    <input type="text" id="notesSearch" class="form-control" placeholder="Search notes...">
+  </div>
+
+  <select id="notesSubjectFilter" class="form-control">
+    <option value="">All Subjects</option>
+    <option value="Accountancy">📊 Accountancy</option>
+    <option value="Business Law">⚖️ Business Law</option>
+    <option value="Quantitative Aptitude">🔢 Quantitative Aptitude</option>
+    <option value="Business Economics">📈 Business Economics</option>
+  </select>
+</div>
+
                 <div class="notes-grid" id="notesGrid">
                     <p class="text-secondary">No notes yet. Create your first note to start organizing your study materials!</p>
                 </div>
