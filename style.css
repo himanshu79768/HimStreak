@@ -869,8 +869,8 @@ select.form-control {
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --color-background: #000000;
-  --color-surface: #1C1C1E;
+  --color-background: #1C1C1E;
+  --color-surface: #000000;
   --color-text: #FFFFFF;
   --color-text-secondary: #8E8E93;
   --color-primary: #0A84FF;
