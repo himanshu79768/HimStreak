@@ -880,7 +880,7 @@ select.form-control {
   --color-secondary-hover: rgba(142, 142, 147, 0.25);
   --color-secondary-active: rgba(142, 142, 147, 0.3);
   --color-border: rgba(142, 142, 147, 0.3);
-  --color-card-border: rgba(142, 142, 147, 0.2);
+  --color-card-border: none;
   --color-success: #30D158;
   --color-warning: #FF9F0A;
   --color-error: var(--ios-red-dark);
