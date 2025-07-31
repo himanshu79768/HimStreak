@@ -1,21 +1,21 @@
 
 
 {
-    "name": "Streak Daily Tracker",
-    "short_name": "Streak Daily Tracker",
-    "description": "StreakWise Analytics is a comprehensive productivity app that helps students study sessions with a Pomodoro timer, monitor progress with analytics, and stay motivated with achievements and goals.",
+    "name": "HimStreak",
+    "short_name": "HimStreak",
+    "description": "HimStreak is a comprehensive productivity app that helps students study sessions with a Pomodoro timer, monitor progress with analytics, and stay motivated with achievements and goals.",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#FFFFFF",
     "icons": [
         {
-            "src": "https://i.ibb.co/Q3J5mRcv/20250718-011340-0000.png",
+            "src": "Icon/image-2.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://i.ibb.co/Q3J5mRcv/20250718-011340-0000.png",
+            "src": "Icon/image-2.png",
             "sizes": "512x512",
             "type": "image/png"
         }
