@@ -1170,7 +1170,7 @@ input[type="password"] {
   left: 0;
   width: 280px;
   height: 100%;
-  background: #ffffff;
+  background: var(--color-background);
   border-right: 1px solid var(--color-border);
   padding: var(--space-24);
   z-index: 2000;
