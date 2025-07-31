@@ -798,8 +798,8 @@ select.form-control {
   --ios-gray-dark: #1C1C1E;
 
   /* Semantic Color Tokens (Light Mode) */
-  --color-background: #FFFFFF;
-  --color-surface: #F8F9FA;
+  --color-background: #FAFAFA;
+  --color-surface: #FFFFFF;
   --color-text: #1C1C1E;
   --color-text-secondary: #8E8E93;
   --color-primary: var(--ios-blue);
