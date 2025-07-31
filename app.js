@@ -1128,7 +1128,7 @@ class HimStreakApp {
                             <i class="fas fa-edit"></i>
                         </button>
                         <button class="btn btn-sm btn-outline" onclick="app.deleteTask(${task.id})">
-                            <i class="fas fa-trash"></i>
+                            <i class="fas fa-trash" style="color:#dc3545"></i>
                         </button>
                     </div>
                 </div>
