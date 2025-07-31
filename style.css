@@ -1021,7 +1021,7 @@ input[type="password"] {
   left: var(--space-20);
   z-index: 2001;
   background: transparent;
-  color: rgb(0, 0, 0);
+  color: var(--color-text);
   border: none;
   
   width: 42px;
@@ -1119,7 +1119,7 @@ input[type="password"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(0, 0, 0);
+  color: var(--text-color);
   cursor: pointer;
 }
 
