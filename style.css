@@ -528,8 +528,10 @@ select.form-control {
 .form-label {
   display: block;
   margin-bottom: var(--space-8);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
+  text-align: left;
+  margin-left: 10px;
 }
 
 .form-group {
@@ -801,6 +803,8 @@ select.form-control {
   --color-background: #FAFAFA;
   --color-surface: #FFFFFF;
   --color-text: #1C1C1E;
+  --color-lightblue: #e6e7ff;
+  --color-sidetext: #4264DF;
   --color-text-secondary: #8E8E93;
   --color-primary: var(--ios-blue);
   --color-primary-hover: var(--ios-blue-dark);
@@ -872,6 +876,8 @@ select.form-control {
   --color-background: #1E1E1E;
   --color-surface: #292929;
   --color-text: #FFFFFF;
+  --color-lightblue: #283142;
+  --color-sidetext: #7090DD;
   --color-text-secondary: #8E8E93;
   --color-primary: #0A84FF;
   --color-primary-hover: #409CFF;
@@ -1023,7 +1029,6 @@ input[type="password"] {
   background: transparent;
   color: var(--color-text);
   border: none;
-  
   width: 42px;
   height: 42px;
   display: flex;
@@ -1031,7 +1036,6 @@ input[type="password"] {
   justify-content: center;
   font-size: 18px;
   cursor: pointer;
- 
   transition: all var(--duration-fast) var(--ease-ios);
   visibility: visible !important;
   opacity: 1 !important;
@@ -1441,6 +1445,28 @@ input[type="password"] {
   outline: none;
 }
 
+#newTaskBtn {
+  margin-left: 13px;
+ 
+}
+
+#newNoteBtn {
+  margin-left: 13px;
+ 
+}
+
+
+
+#newHabitBtn {
+  margin-left: 13px;
+ 
+}
+
+#newGoalBtn {
+  margin-left: 13px;
+ 
+}
+
 #timerReset:hover {
   outline: none;
   border: none;
@@ -1469,9 +1495,11 @@ input[type="password"] {
 .form-label {
   display: block;
   margin-bottom: var(--space-8);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   font-size: 14px;
   color: var(--color-text);
+  text-align: left;
+  margin-left: 10px;
 }
 
 .form-group {
@@ -1484,6 +1512,10 @@ input[type="password"] {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-24);
   margin-bottom: var(--space-40);
+}
+
+#quickTimerBtn{
+  margin-left: 13px;
 }
 
 .stats-card {
@@ -1502,10 +1534,11 @@ input[type="password"] {
   box-shadow: var(--shadow-md);
 }
 
-.stat-icon {
-  width: 48px;
+
+.stat-icon .fa-fire {
+    background-color: #ff5722; /* Orange-Red for Fire */
+     width: 49px;
   height: 48px;
-  background: #FF9500;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1513,6 +1546,43 @@ input[type="password"] {
   color: white;
   font-size: 20px;
 }
+
+.stat-icon .fa-clock {
+    background-color: #3f51b5; /* Indigo for Clock */
+     width: 49px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.stat-icon .fa-trophy {
+    background-color: #ffc107; /* Amber for Trophy */
+     width: 49px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.stat-icon .fa-bullseye {
+    background-color: #4caf50; /* Green for Bullseye */
+     width: 49px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
 
 .stat-content h3 {
   font-size: 24px;
@@ -1532,9 +1602,10 @@ input[type="password"] {
 }
 
 .subjects-grid h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--space-24);
+  padding-left: 15px;
 }
 
 .subjects-container {
@@ -1606,9 +1677,10 @@ input[type="password"] {
 
 /* Recent Activity */
 .recent-activity h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: var(--font-weight-semibold);
   margin-bottom: var(--space-24);
+  padding-left: 15px;
 }
 
 .activity-list {
@@ -1714,10 +1786,12 @@ input[type="password"] {
   min-width: 120px;
 }
 
+#timerStart{
+  background-color: #11b139;
+}
+
 .timer-settings {
-  background: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
+  background: transparent;
   padding: var(--space-24);
   max-width: 400px;
   margin: 0 auto;
@@ -1733,7 +1807,7 @@ input[type="password"] {
   flex: 1;
   padding: var(--space-12) var(--space-16);
   border: 1px solid var(--color-border);
-  background: transparent;
+  background: var(--color-surface);
   color: var(--color-text);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -1919,7 +1993,6 @@ input[type="password"] {
   font-size: 14px;
   line-height: 1.5;
   margin-bottom: var(--space-12);
-  display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -2055,9 +2128,7 @@ input[type="password"] {
 }
 
 .settings-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
+ 
   padding: var(--space-24);
 }
 
@@ -2198,8 +2269,8 @@ input[type="password"] {
   }
   
   .section-header h1 {
-    font-size: 22px;
-    padding-left: 22px;
+    font-size: 24px;
+    padding-left: 15px;
   }
   
   .dashboard-grid {
@@ -2261,6 +2332,17 @@ input[type="password"] {
     width: 40px;
     height: 40px;
   }
+
+  .menu-item {
+    background-color: transparent;
+    color: var(--color-text);
+    font-size: 16px;
+  }
+
+  .menu-item.active {
+    background-color: var(--color-lightblue);
+    color: var(--color-sidetext);
+}
 }
 
 @media (max-width: 480px) {
