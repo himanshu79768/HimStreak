@@ -1995,6 +1995,7 @@ input[type="password"] {
   margin-bottom: var(--space-12);
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  display: inline-block;
   overflow: hidden;
 }
 
