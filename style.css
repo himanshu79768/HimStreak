@@ -1384,7 +1384,7 @@ input[type="password"] {
 }
 
 .btn-outline {
-  background: var(--color-surface);
+  background: var(--color-background);
   border: 1px solid var(--color-border);
   color: var(--color-text);
 }
@@ -2193,7 +2193,7 @@ span.session-type {
   align-items: center;
   justify-content: center;
   padding: var(--space-20) var(--space-24);
- padding-bottom: 0;
+ padding-bottom: 5px;
 }
 
 .modal-header h3 {
