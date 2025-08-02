@@ -1397,7 +1397,12 @@ input[type="password"] {
   color: #dc3545;
 }
 
-
+span.session-type {
+    padding: 3px;
+    border-radius: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
 .search-wrapper {
   position: relative;
