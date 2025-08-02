@@ -527,7 +527,7 @@ select.form-control {
 
 .form-label {
   display: block;
-  margin-bottom: var(--space-8);
+ 
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-sm);
   text-align: left;
@@ -1495,7 +1495,7 @@ span.session-type {
 
 .form-label {
   display: block;
-  margin-bottom: var(--space-8);
+  
   font-weight: var(--font-weight-semibold);
   font-size: 14px;
   color: var(--color-text);
