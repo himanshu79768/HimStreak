@@ -1107,10 +1107,6 @@ input[type="password"] {
   transition: all var(--duration-fast) var(--ease-ios);
 }
 
-.theme-toggle:hover {
-  background: var(--color-secondary);
-}
-
 .profile-menu {
   position: relative;
 }
