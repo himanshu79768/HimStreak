@@ -6,8 +6,8 @@
     "description": "HimStreak is a comprehensive productivity app that helps students study sessions with a Pomodoro timer, monitor progress with analytics, and stay motivated with achievements and goals.",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#FAFAFA",
-    "theme_color": "#FAFAFA",
+    "background_color": "#FAF9F5",
+    "theme_color": "#FAF9F5",
     "icons": [
         {
             "src": "Icon/image-2.png",
@@ -21,3 +21,4 @@
         }
     ]
 }
+
