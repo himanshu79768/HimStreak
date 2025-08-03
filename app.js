@@ -711,9 +711,9 @@ class HimStreakApp {
     const themeColorMeta = document.querySelector('meta[name="theme-color"]');
     if (themeColorMeta) {
         if (this.settings.theme === 'dark') {
-            themeColorMeta.setAttribute('content', '#000000'); // or dark gray
+            themeColorMeta.setAttribute('content', '#1E1E1E'); // or dark gray
         } else {
-            themeColorMeta.setAttribute('content', '#ffffff'); // or your light color
+            themeColorMeta.setAttribute('content', '#FAF9F5'); // or your light color
         }
     }
     }
