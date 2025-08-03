@@ -2251,6 +2251,7 @@ span.session-type {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-16);
+    font-family: "copernicus","copernicus Fallback";
   }
   
   .section-header h1 {
