@@ -705,7 +705,17 @@ class HimStreakApp {
     }
     
     applyTheme() {
-        document.documentElement.setAttribute('data-theme', this.settings.theme);
+    document.documentElement.setAttribute('data-theme', this.settings.theme);
+
+    // Set status bar color
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeColorMeta) {
+        if (this.settings.theme === 'dark') {
+            themeColorMeta.setAttribute('content', '#000000'); // or dark gray
+        } else {
+            themeColorMeta.setAttribute('content', '#ffffff'); // or your light color
+        }
+    }
     }
     
     // Timer Functions
