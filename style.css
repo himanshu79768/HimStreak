@@ -1321,7 +1321,7 @@ input[type="password"] {
 
 .section-header h1 {
   font-size: 32px;
-  font-weight: var(--font-weight-bold);
+  font-weight: 300;
   color: var(--color-text);
 }
 
@@ -2254,7 +2254,7 @@ span.session-type {
   }
   
   .section-header h1 {
-    font-size: 24px;
+    font-size: 30px;
     padding-left: 15px;
   }
   
