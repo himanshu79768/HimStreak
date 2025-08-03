@@ -1316,6 +1316,7 @@ input[type="password"] {
   margin-bottom: var(--space-40);
   flex-wrap: wrap;
   gap: var(--space-16);
+  font-family: "copernicus","copernicus Fallback";
 }
 
 .section-header h1 {
